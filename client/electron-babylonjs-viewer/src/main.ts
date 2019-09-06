@@ -19,13 +19,17 @@ class Main {
     private setupView = () => {
         this.videoContainer = document.getElementById('videoContainer');
         document.getElementById('webrtcConnectButton').onclick = this.connectButtonClicked;
+        document.getElementById('webrtcDisconnectButton').onclick = this.disconnectButtonClicked;
     };
 
     private connectButtonClicked = () => {
-        console.log("connect");
+        console.log("connect", this.localStream);
         this.sfuClient.connect(this.localStream, "test", Math.random().toString(36).slice(-8));
     };
 
+    private disconnectButtonClicked = () => {
+        this.sfuClient.disconnect();
+    }
 
     private setupFileStream = (): MediaStream => {
         const videoElement = document.createElement('video');

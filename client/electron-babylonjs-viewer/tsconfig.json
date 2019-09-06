@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "target": "es5",
+        "module": "es2015",
+        "moduleResolution": "node",
+        "lib": [
+            "es2018",
+            "dom"
+        ],
+        "types": [
+            "node",
+            "babylonjs"
+        ]
+    }
+}
